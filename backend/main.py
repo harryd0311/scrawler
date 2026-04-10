@@ -18,7 +18,7 @@ from scheduler import start_scheduler
 models.Base.metadata.create_all(bind=engine)
 
 _scheduler = None
-FRONTEND_DIST = Path(__file__).parent.parent / "frontend" / "dist"
+FRONTEND_DIST = Path(__file__).parent / "frontend" / "dist"
 
 
 @asynccontextmanager
