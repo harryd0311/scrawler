@@ -40,6 +40,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/healthz", include_in_schema=False)
+def health_check():
+    return {"status": "ok"}
+
+
 # Serve built React frontend (production)
 if FRONTEND_DIST.exists():
     app.mount("/assets", StaticFiles(directory=FRONTEND_DIST / "assets"), name="assets")
